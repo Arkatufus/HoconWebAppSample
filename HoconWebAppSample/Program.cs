@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Hocon.Extensions.Configuration;
 
-namespace HoconSample
+namespace HoconWebAppSample
 {
     public class Program
     {
@@ -21,8 +21,10 @@ namespace HoconSample
                 })
                 .ConfigureAppConfiguration((hostingContext, config) =>
                 {
+                    // We inject the HOCON configuration file using this function call,
+                    // the rest of the code are there to make sure that the final configuration
+                    // conforms to the Microsoft standard on loading a full configuration stack.
                     var env = hostingContext.HostingEnvironment;
-
                     config.AddHoconFile("appsettings.conf", optional: false, reloadOnChange: true)
                         .AddHoconFile($"appsettings.{env.EnvironmentName}.conf", optional: true, reloadOnChange: true);
 

@@ -1,6 +1,6 @@
 using System;
 
-namespace HoconSample.Models
+namespace HoconWebAppSample.Models
 {
     public class ErrorViewModel
     {

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using HoconSample.Models;
+using HoconWebAppSample.Models;
 
-namespace HoconSample.Controllers
+namespace HoconWebAppSample.Controllers
 {
     public class HomeController : Controller
     {
