@@ -20,13 +20,13 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
 			// conforms to the Microsoft standard on loading a full configuration stack.
 			var env = hostingContext.HostingEnvironment;
 			config.AddHoconFile(
-            	"appsettings.conf",
-            		optional: false,
-                	reloadOnChange: true)
-				.AddHoconFile(
-                	$"appsettings.{env.EnvironmentName}.conf",
-                    optional: true,
-                    reloadOnChange: true);
+				"appsettings.conf",
+				optional: false,
+				reloadOnChange: true)
+			.AddHoconFile(
+				$"appsettings.{env.EnvironmentName}.conf",
+				optional: true,
+				reloadOnChange: true);
 
 			if (env.IsDevelopment())
 			{
